@@ -1,6 +1,14 @@
+"use strict";
+
 module.exports = {
-  // compo:[
-  //     "compo1",
-  //     "compo2"
-  // ]
+  LeonAtrs: [
+    "completion_rate",
+    "weight",
+    "tracking",
+    "leading",
+    "size",
+    "pathGap",
+    "patternWidth",
+    "patternHeight"
+  ]
 };

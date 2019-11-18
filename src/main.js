@@ -1,13 +1,15 @@
-const Plugin = require("./Plugin");
+const LeonSans = require("./LeonSans");
+const LeonIncident = require("./LeonIncident");
 const compositeAttributes = require("./compoAttributes");
 
 module.exports = {
-  npm_name: "@kissmybutton/motorcortex-<plugin>",
+  npm_name: "@kissmybutton/motorcortex-LeonSans",
+  Clip: LeonSans,
   incidents: [
     {
-      exportable: Plugin,
-      name: "Plugin"
+      exportable: LeonIncident,
+      name: "LeonIncident"
     }
   ],
-  compositeAttributes
+  compositeAttributes: compositeAttributes
 };

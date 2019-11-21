@@ -7,10 +7,10 @@ class LeonSans extends MC.API.DOMClip {
   get html() {
     return ` <canvas> </canvas>`;
   }
+
   onAfterRender() {
-    let leon, canvas;
     this.cValue = 0;
-    canvas = this.context.getElements("canvas")[0];
+    const canvas = this.context.getElements("canvas")[0];
     this.sw = this.attrs.sw;
     this.sh = this.attrs.sh;
     const pixelRatio = 2;
@@ -23,7 +23,7 @@ class LeonSans extends MC.API.DOMClip {
     canvas.style.height = this.sh + "px";
     this.ctx.scale(pixelRatio, pixelRatio);
 
-    leon = new leonSans({
+    const leon = new leonSans({
       text: this.attrs.text,
       color: this.attrs.color,
       weight: this.attrs.weight,

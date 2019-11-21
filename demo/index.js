@@ -73,9 +73,9 @@ clip.addIncident(songPlayback, 0);
 const test = new LeonSans.Clip(
   {
     canvasId: "leonObj",
-    sw: 800,
+    sw: 1400,
     sh: 600,
-    text: "abcdefghijklmn\nopqrstuvwxyz",
+    text: "KISSMYBUTTON\nLEON_SANS PLUGIN",
     weight: 100,
     round: true,
     // multiply: true,

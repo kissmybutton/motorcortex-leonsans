@@ -1,5 +1,5 @@
 "use strict";
 
-var LeonSans = require('./leonsans')["default"];
+var LeonSans = require("./leonsans")["default"];
 
 module.exports = LeonSans;

@@ -37,7 +37,7 @@ function eachPoint_(ctx, p, data) {
     mp = p.cv[i];
     cp = mp.addRect(data.rect);
 
-    if (mp.type == 'b') {
+    if (mp.type == "b") {
       ctx.fillStyle = "#ff2a00";
       ctx.beginPath();
       ctx.arc(cp.x3 + (cp.x3 - cp.x2), cp.y3 + (cp.y3 - cp.y2), 1.5, 0, _util.PI2);
@@ -69,14 +69,14 @@ function eachPoint_(ctx, p, data) {
 function eachLine_(ctx, d) {
   var pos = d.pos;
 
-  if (pos.type != 'a') {
-    if (pos.type == 'm') {
+  if (pos.type != "a") {
+    if (pos.type == "m") {
       ctx.strokeStyle = "#ff2a00";
       ctx.beginPath();
       ctx.moveTo(pos.x, pos.y);
-    } else if (pos.type == 'l') {
+    } else if (pos.type == "l") {
       ctx.lineTo(pos.x, pos.y);
-    } else if (pos.type == 'b') {
+    } else if (pos.type == "b") {
       ctx.bezierCurveTo(pos.x, pos.y, pos.x2, pos.y2, pos.x3, pos.y3);
     }
 

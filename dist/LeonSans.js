@@ -98,18 +98,13 @@ function (_MC$API$DOMClip) {
     }
   }, {
     key: "onAfterProgress",
-    value: function onAfterProgress(f, m) {
+    value: function onAfterProgress() {
       if (this.attrs.drowing === "colorPattern") {
-        var randomColor = function randomColor(no) {
-          return "hsl(" + (no + cValue) + "," + "70%," + "50%)";
-        };
-
         this.ctx.clearRect(0, 0, this.sw, this.sh);
         this.ctx.lineWidth = 0.2;
         var w = this.attrs.patternWidth;
         var total = this.leon.data.length;
         var i,
-            p,
             pos,
             no = 0;
         var d, j, j_total;
@@ -120,8 +115,8 @@ function (_MC$API$DOMClip) {
 
           for (j = 0; j < j_total; j++) {
             pos = d[j];
-            this.ctx.fillStyle = randomColor(no);
-            this.ctx.strokeStyle = randomColor(no);
+            this.ctx.fillStyle = this.randomColor(no);
+            this.ctx.strokeStyle = this.randomColor(no);
             this.ctx.beginPath();
             this.ctx.arc(pos.x, pos.y, w, 0, PI2);
             this.ctx.stroke();
@@ -131,6 +126,11 @@ function (_MC$API$DOMClip) {
 
         cValue -= this.attrs.speed;
       }
+    }
+  }, {
+    key: "randomColor",
+    value: function randomColor(no) {
+      return "hsl(" + (no + cValue) + "," + "70%," + "50%)";
     }
   }, {
     key: "html",

@@ -29,12 +29,12 @@ function () {
   _createClass(Dispatcher, [{
     key: "on",
     value: function on(event, callback) {
-      if (typeof callback !== 'function') {
+      if (typeof callback !== "function") {
         console.error("The listener callback must be a function, the given type is ".concat(_typeof(callback)));
         return false;
       }
 
-      if (typeof event !== 'string') {
+      if (typeof event !== "string") {
         console.error("The event name must be a string, the given type is ".concat(_typeof(event)));
         return false;
       }

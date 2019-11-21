@@ -42,7 +42,7 @@ function () {
       w: 0,
       h: 0
     };
-    this.align_ = 'left';
+    this.align_ = "left";
     this.scale_ = 1;
     this.fontRatio_ = 1;
   }
@@ -336,7 +336,7 @@ function () {
         w: 0,
         h: 0
       };
-      this.align_ = 'left';
+      this.align_ = "left";
       this.scale_ = 1;
       this.fontRatio_ = 1;
     }

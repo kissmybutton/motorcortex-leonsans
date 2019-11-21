@@ -15,9 +15,9 @@ function setAlignGapX(sw, tw) {
 }
 
 function getAlignGapX(align, alignGapX) {
-  if (align == 'center') {
+  if (align == "center") {
     return alignGapX.c;
-  } else if (align == 'right') {
+  } else if (align == "right") {
     return alignGapX.r;
   } else {
     return alignGapX.l;

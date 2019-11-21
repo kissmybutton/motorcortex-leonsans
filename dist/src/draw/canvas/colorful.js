@@ -33,15 +33,15 @@ function Colorful(ctx, model, colors) {
       line = d.lines[j];
       pos = line.pos;
 
-      if (pos.type == 'a') {
+      if (pos.type == "a") {
         setColor(ctx);
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, pos.radius * d.drawing.value, 0, _util.PI2);
         ctx.fill();
         ctx.closePath();
-      } else if (pos.type == 'm') {
+      } else if (pos.type == "m") {
         prev = pos;
-      } else if (pos.type == 'l') {
+      } else if (pos.type == "l") {
         length = (0, _length.distance)(prev.x, prev.y, pos.x, pos.y);
 
         if (length / model.scale > MIN_DISTANCE) {
@@ -54,7 +54,7 @@ function Colorful(ctx, model, colors) {
         }
 
         prev = pos;
-      } else if (pos.type == 'b') {
+      } else if (pos.type == "b") {
         length = (0, _length.cubicBezierLength)(prev.x, prev.y, pos.x, pos.y, pos.x2, pos.y2, pos.x3, pos.y3);
 
         if (length / model.scale > MIN_DISTANCE) {

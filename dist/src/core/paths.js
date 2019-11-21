@@ -17,7 +17,7 @@ var prevPoint = null;
  * @name getPaths
  * @property {Model} model - mode.js
  * @property {Object} data - data object
- * @property {Number} pathGap 
+ * @property {Number} pathGap
  * @returns {Array} Returns paths array
  * @description get a guide pos
  */
@@ -93,12 +93,12 @@ function getDotPos(lines, pathGap, scale) {
   for (i = 0; i < total; i++) {
     line = lines[i];
 
-    if (line.type == 'a') {
+    if (line.type == "a") {
       arr.push(new _point.Point({
         x: line.x1,
         y: line.y1,
         rotation: 0,
-        type: 'a',
+        type: "a",
         pat: line.pat,
         fix: line.fix,
         radius: line.radius
@@ -117,7 +117,7 @@ function getDotPos(lines, pathGap, scale) {
 
       if (pp != null) {
         if (isFirst) {
-          pp.type = 'm';
+          pp.type = "m";
           isFirst = 0;
         }
 
@@ -133,7 +133,7 @@ function getDotPos(lines, pathGap, scale) {
       for (j = 1; j < j_total; j++) {
         num = j / (j_total - 1);
 
-        if (line.type == 'b') {
+        if (line.type == "b") {
           curPoint = getCubicBezierXYatT(line, num);
         } else {
           curPoint = new _point.Point({
@@ -152,7 +152,7 @@ function getDotPos(lines, pathGap, scale) {
 
           if (pp != null) {
             if (isFirst) {
-              pp.type = 'm';
+              pp.type = "m";
               isFirst = 0;
             }
 

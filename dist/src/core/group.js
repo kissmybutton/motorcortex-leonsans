@@ -12,10 +12,10 @@ var _index = require("../font/index.js");
 function getTextGroup(text, scale, width, isBreakAll) {
   var group;
 
-  if (text.indexOf('\n') > 0) {
-    group = text.split('\n');
-  } else if (text.indexOf('\\n') > 0) {
-    group = text.split('\\n');
+  if (text.indexOf("\n") > 0) {
+    group = text.split("\n");
+  } else if (text.indexOf("\\n") > 0) {
+    group = text.split("\\n");
   } else {
     group = [text];
   }
@@ -29,7 +29,7 @@ function keepAll(group) {
   var i;
 
   for (i = 0; i < total; i++) {
-    textGroup[i] = group[i].split('');
+    textGroup[i] = group[i].split("");
   }
 
   return textGroup;
@@ -53,7 +53,7 @@ function breakWord(group, scale, width) {
   total = group.length;
 
   for (i = 0; i < total; i++) {
-    g2 = group[i].split(' ');
+    g2 = group[i].split(" ");
     tg[index] = [];
     j_total = g2.length;
 
@@ -68,7 +68,7 @@ function breakWord(group, scale, width) {
         tw2 += m_rect.w;
       }
 
-      t = (0, _index.typo)(' ');
+      t = (0, _index.typo)(" ");
       m_rect = (0, _util.getRect)(t, scale);
       tw2 += m_rect.w;
       tw += tw2;
@@ -90,7 +90,7 @@ function breakWord(group, scale, width) {
   var textGroup = [];
 
   for (i = 0; i < total; i++) {
-    t = tg[i].join(' ').split('');
+    t = tg[i].join(" ").split("");
 
     if (t.length > 0) {
       textGroup.push(t);
@@ -146,8 +146,8 @@ function breakAll(group, scale, width) {
     t = tg[i];
 
     if (t.length > 0) {
-      if (t[0] == ' ') t.shift();
-      if (t[t.length - 1] == ' ') t.pop();
+      if (t[0] == " ") t.shift();
+      if (t[t.length - 1] == " ") t.pop();
       if (t.length > 0) textGroup.push(t);
     }
   }

@@ -61,21 +61,21 @@ function (_Dispatcher) {
 
     var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
         _ref$text = _ref.text,
-        text = _ref$text === void 0 ? '' : _ref$text,
+        text = _ref$text === void 0 ? "" : _ref$text,
         _ref$size = _ref.size,
         size = _ref$size === void 0 ? 500 : _ref$size,
         _ref$weight = _ref.weight,
         weight = _ref$weight === void 0 ? _util.MIN_FONT_WEIGHT : _ref$weight,
         _ref$color = _ref.color,
-        color = _ref$color === void 0 ? ['#000000'] : _ref$color,
+        color = _ref$color === void 0 ? ["#000000"] : _ref$color,
         _ref$colorful = _ref.colorful,
-        colorful = _ref$colorful === void 0 ? ['#c5d73f', '#9d529c', '#49a9db', '#fec330', '#5eb96e', '#fc5356', '#f38f31'] : _ref$colorful,
+        colorful = _ref$colorful === void 0 ? ["#c5d73f", "#9d529c", "#49a9db", "#fec330", "#5eb96e", "#fc5356", "#f38f31"] : _ref$colorful,
         _ref$tracking = _ref.tracking,
         tracking = _ref$tracking === void 0 ? 0 : _ref$tracking,
         _ref$leading = _ref.leading,
         leading = _ref$leading === void 0 ? 0 : _ref$leading,
         _ref$align = _ref.align,
-        align = _ref$align === void 0 ? 'left' : _ref$align,
+        align = _ref$align === void 0 ? "left" : _ref$align,
         _ref$pathGap = _ref.pathGap,
         pathGap = _ref$pathGap === void 0 ? 0.5 : _ref$pathGap,
         _ref$amplitude = _ref.amplitude,
@@ -214,14 +214,14 @@ function (_Dispatcher) {
     value: function updateSignal() {
       this.model.updateLinesForRect();
       this.model.updatePathsForRect();
-      this.dispatch('update', this.model);
+      this.dispatch("update", this.model);
     }
   }, {
     key: "reset",
     value: function reset() {
       this.size_ = 500;
       this.weight_ = _util.MIN_FONT_WEIGHT;
-      this.color_ = ['#000000'];
+      this.color_ = ["#000000"];
       this.tracking_ = 0;
       this.leading_ = 0;
       this.pathGap_ = 0.5;

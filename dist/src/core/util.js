@@ -134,7 +134,7 @@ function getCenter(w, h, scale) {
  * @property {Number} - weightRatio
  * @property {Number} - circleRound
  * @returns {Object} ratio range
- * @description save ratio range to control each line's coordinate 
+ * @description save ratio range to control each line's coordinate
  */
 
 
@@ -200,7 +200,7 @@ function getLines(data) {
           //    dv = getCurrent(1 - d.drawing.value, d.minDrawing, d.maxDrawing, 1, 0);
           //}
 
-          if (dv > 0 && d.pos.type != 'a') {
+          if (dv > 0 && d.pos.type != "a") {
             var frac = d.lengths * dv;
             ctx.setLineDash([d.lengths]);
             ctx.lineDashOffset = d.direction * (frac + d.lengths);
@@ -229,7 +229,7 @@ function addRectToPaths(path, data) {
 }
 
 function randomBrightColor() {
-  return "hsl(" + 360 * Math.random() + ',' + '100%,' + '50%)';
+  return "hsl(" + 360 * Math.random() + "," + "100%," + "50%)";
 }
 
 function shuffle(oldArray) {

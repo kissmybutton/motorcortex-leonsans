@@ -34,7 +34,7 @@ function Wave(ctx, data, scale, amplitude, weight, fps) {
       p.sy = p.y + rany;
     }
 
-    if (p.type == 'a') {
+    if (p.type == "a") {
       saveDot.push(p);
     } else if (p.start == 1) {
       ctx.moveTo(p.x, p.y);

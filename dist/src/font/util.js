@@ -22,7 +22,7 @@ var VERTEX_GAP = 3;
 exports.VERTEX_GAP = VERTEX_GAP;
 var VERTEX_GAP2 = VERTEX_GAP / 2;
 exports.VERTEX_GAP2 = VERTEX_GAP2;
-var TOFU = 'tofu';
+var TOFU = "tofu";
 exports.TOFU = TOFU;
 var FONT_HEIGHT = 824;
 
@@ -68,7 +68,7 @@ function setCenter(arr, fw, fh) {
     mp[1] -= cx;
     mp[2] -= cy;
 
-    if (mp[0] == 'b') {
+    if (mp[0] == "b") {
       mp[3] -= cx;
       mp[4] -= cy;
       mp[5] -= cx;

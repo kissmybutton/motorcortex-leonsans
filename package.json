@@ -1,5 +1,5 @@
 {
-  "name": "@kissmybutton/motorcortex-LeonSans",
+  "name": "@kissmybutton/motorcortex-leonsans",
   "version": "0.0.1",
   "description": "LeonSans plugin for MotorCortex",
   "main": "./dist/main.js",

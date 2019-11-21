@@ -23,7 +23,7 @@ function Pattern(ctx, data, w, h) {
       ctx.fillStyle = "#ff95f8";
     }
 
-    if (p.type == 'a') {
+    if (p.type == "a") {
       ctx.beginPath();
       ctx.arc(p.x, p.y, w3, 0, _util.PI2);
       ctx.fill();

@@ -79,14 +79,13 @@ class LeonSans extends MC.API.DOMClip {
 
     this.leon = leon;
   }
-  onAfterProgress(f, m) {
+  onAfterProgress() {
     if (this.attrs.drowing === "colorPattern") {
       this.ctx.clearRect(0, 0, this.sw, this.sh);
       this.ctx.lineWidth = 0.2;
       const w = this.attrs.patternWidth;
       const total = this.leon.data.length;
       let i,
-        p,
         pos,
         no = 0;
       let d, j, j_total;
@@ -95,8 +94,8 @@ class LeonSans extends MC.API.DOMClip {
         j_total = Math.round(d.length * this.leon.drawing[i].value);
         for (j = 0; j < j_total; j++) {
           pos = d[j];
-          this.ctx.fillStyle = randomColor(no);
-          this.ctx.strokeStyle = randomColor(no);
+          this.ctx.fillStyle = this.randomColor(no);
+          this.ctx.strokeStyle = this.randomColor(no);
           this.ctx.beginPath();
           this.ctx.arc(pos.x, pos.y, w, 0, PI2);
           this.ctx.stroke();
@@ -105,11 +104,10 @@ class LeonSans extends MC.API.DOMClip {
       }
 
       cValue -= this.attrs.speed;
-
-      function randomColor(no) {
-        return "hsl(" + (no + cValue) + "," + "70%," + "50%)";
-      }
     }
+  }
+  randomColor(no) {
+    return "hsl(" + (no + cValue) + "," + "70%," + "50%)";
   }
 }
 

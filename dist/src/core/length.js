@@ -47,7 +47,7 @@ function getEachPath(item, points, model) {
     line = {};
     cp2 = p.convert(item, model);
 
-    if (i == 0 || p.type == 'a') {
+    if (i == 0 || p.type == "a") {
       line.x1 = cp2.x;
       line.y1 = cp2.y;
       line.distance = 0;
@@ -55,7 +55,7 @@ function getEachPath(item, points, model) {
     } else {
       cp1 = prev.convert(item, model);
 
-      if (prev.type == 'b') {
+      if (prev.type == "b") {
         line.x1 = cp1.x3;
         line.y1 = cp1.y3;
       } else {
@@ -66,7 +66,7 @@ function getEachPath(item, points, model) {
       line.x2 = cp2.x;
       line.y2 = cp2.y;
 
-      if (p.type == 'b') {
+      if (p.type == "b") {
         line.x3 = cp2.x2;
         line.y3 = cp2.y2;
         line.x4 = cp2.x3;

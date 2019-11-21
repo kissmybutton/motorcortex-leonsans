@@ -12,7 +12,7 @@ function Vector(mp) {
   this.x = mp[1] || 0;
   this.y = mp[2] || 0;
 
-  if (this.type == 'b') {
+  if (this.type == "b") {
     this.x2 = mp[3] || 0;
     this.y2 = mp[4] || 0;
     this.x3 = mp[5] || 0;
@@ -90,7 +90,7 @@ Object.assign(Vector.prototype, {
 
 function convertR(type, pos, model) {
   var rd = 0;
-  if (type == 'a') rd = pos.range.cr * model.scale * model.fontRatio;
+  if (type == "a") rd = pos.range.cr * model.scale * model.fontRatio;
   return rd;
 }
 

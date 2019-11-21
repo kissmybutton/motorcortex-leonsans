@@ -26,17 +26,17 @@ function PixiLines(graphics, data, lineW, color) {
 function eachLine_(graphics, data, lineW, color) {
   var pos = data.pos;
 
-  if (pos.type == 'a') {
+  if (pos.type == "a") {
     graphics.lineStyle(0, color, 0);
     graphics.beginFill(color);
     graphics.drawCircle(pos.x, pos.y, pos.radius);
     graphics.endFill();
-  } else if (pos.type == 'm') {
+  } else if (pos.type == "m") {
     graphics.lineStyle(lineW, color, 1);
     graphics.moveTo(pos.x, pos.y);
-  } else if (pos.type == 'l') {
+  } else if (pos.type == "l") {
     graphics.lineTo(pos.x, pos.y);
-  } else if (pos.type == 'b') {
+  } else if (pos.type == "b") {
     graphics.bezierCurveTo(pos.x, pos.y, pos.x2, pos.y2, pos.x3, pos.y3);
   }
 
@@ -46,7 +46,7 @@ function eachLine_(graphics, data, lineW, color) {
 }
 
 function eachPath_(graphics, pos, lineW, color, dValue) {
-  if (pos.type == 'a') {
+  if (pos.type == "a") {
     graphics.lineStyle(0, color, 0);
     graphics.beginFill(color);
     graphics.drawCircle(pos.x, pos.y, pos.radius * dValue);

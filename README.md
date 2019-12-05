@@ -1,5 +1,8 @@
 # motorcortex-LeonSans
 
+## [Demo](https://kissmybutton.github.io/motorcortex-leonsans/demo/)
+
+
 ## Installation
 
 ```bash
@@ -12,7 +15,7 @@ $ yarn add @kissmybutton/motorcortex-LeonSans
 
 ```javascript
 const MotorCortex = require("@kissmybutton/motorcortex/");
-const LeonPlugin = require("../src/main");
+const LeonPlugin = require("@kissmybutton/motorcortex-LeonSans");
 const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
 ```
 
@@ -30,7 +33,7 @@ const clipName = new LeonSans.Clip(
     weight: 100,
     round: true,
     multiply: true,
-    drowing: "colorful",
+    drawing: "colorful",
     color: [["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"]],
     colorful: ["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
     pathGap: -1,
@@ -58,13 +61,13 @@ const clipName = new LeonSans.Clip(
 | weight |  The weight of the font: 1 - 900 |  all positive numbers  |
 | round |  round the corners of font if they are not path |  true / false  |
 | multiply |  aplaying multiply efect wen the font have more then 1 color |  true / false  |
-| drowing |  type of the font efect |  drowing,pattern,colorful,colorPattern  |
+| drawing |  type of the font efect |  drawing,pattern,colorful,colorPattern  |
 | color |  The colors of each characters this can even be a list   |  hex color   |
-| colorful |  The list colors of each characters if drowing property is colorfull   |  hex color   |
+| colorful |  The list colors of each characters if drawing property is colorfull   |  hex color   |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  numbers |
-| patternWidth: |  is the width of the lines wen drowing property is pattern  |  numbers    |
-| patternHeight |  is the Height of the lines wen drowing property is pattern   |  numbers  |
-| speed |  speed of color changing  wen drowing property is colorPattern  |  numbers   |
+| patternWidth: |  is the width of the lines wen drawing property is pattern  |  numbers    |
+| patternHeight |  is the Height of the lines wen drawing property is pattern   |  numbers  |
+| speed |  speed of color changing  wen drawing property is colorPattern  |  numbers   |
 | tracking |  The spacing between the characters of a block of text   |  numbers    |
 | leading |  The distance between each line of text  |  numbers    |
 | size |  size of text   |  numbers |
@@ -119,8 +122,8 @@ const nameOfIncident = new LeonSans.LeonIncident(
 | completion_rate |  The rate of text complition |  num from 0 to 1  |
 | weight |  The weight of the font: 1 - 900 |  all positive numbers  |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  numbers |
-| patternWidth: |  is the width of the lines wen drowing property is pattern  |  numbers    |
-| patternHeight |  is the Height of the lines wen drowing property is pattern   |  numbers  |
+| patternWidth: |  is the width of the lines wen drawing property is pattern  |  numbers    |
+| patternHeight |  is the Height of the lines wen drawing property is pattern   |  numbers  |
 | tracking |  The spacing between the characters of a block of text   |  numbers    |
 | leading |  The distance between each line of text  |  numbers    |
 | size |  size of text   |  numbers |

@@ -50,11 +50,7 @@ const clip = new MotorCortex.Clip({
     {
       src: "./d2.wav",
       id: "my-wav",
-      base64: false,
-      startValues: {
-        pan: 0,
-        gain: 1
-      }
+      base64: false
     }
   ]
 });
@@ -79,7 +75,7 @@ const test = new LeonSans.Clip(
     weight: 100,
     round: true,
     // multiply: true,
-    drowing: "colorPatter",
+    drawing: "colorPatter",
     colorful: ["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
     color: [["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"]],
     // pathGap: -1,
@@ -238,7 +234,8 @@ const trak = new LeonSans.LeonIncident(
   },
   {
     duration: 1300,
-    selector: "!#leonObj"
+    selector: "!#leonObj",
+    easing: "easeOutCirc"
   }
 );
 

@@ -56,7 +56,7 @@ function (_MC$API$MonoIncident) {
       var _this = this;
 
       var drawning = function drawning() {
-        switch (_this.element.entity.drowing) {
+        switch (_this.element.entity.drawing) {
           case "colorful":
             _this.element.entity.leon.drawColorful(_this.element.entity.ctx);
 
@@ -88,8 +88,6 @@ function (_MC$API$MonoIncident) {
       };
 
       var animate = function animate() {
-        console.log("animate");
-
         for (var j = 0; j < compAtrrs.LeonAtrs.length; j++) {
           var t = compAtrrs.LeonAtrs[j];
 

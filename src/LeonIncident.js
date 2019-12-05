@@ -16,9 +16,9 @@ class testIn extends MC.API.MonoIncident {
     }
   }
 
-  onProgress(f, m) {
+  onProgress(f) {
     const drawning = () => {
-      switch (this.element.entity.drowing) {
+      switch (this.element.entity.drawing) {
         case "colorful":
           this.element.entity.leon.drawColorful(this.element.entity.ctx);
           break;
@@ -56,7 +56,6 @@ class testIn extends MC.API.MonoIncident {
     };
 
     const animate = () => {
-      console.log("animate");
       for (let j = 0; j < compAtrrs.LeonAtrs.length; j++) {
         const t = compAtrrs.LeonAtrs[j];
 
@@ -68,8 +67,8 @@ class testIn extends MC.API.MonoIncident {
           this.initialValue[t];
 
         if (t === "completion_rate") {
-          let i,
-            total = this.element.entity.leon.drawing.length;
+          let i;
+          const total = this.element.entity.leon.drawing.length;
           for (i = 0; i < total; i++) {
             this.element.entity.leon.drawing[i].value =
               f * (this.targetValue[t] - this.initialValue[t]) +

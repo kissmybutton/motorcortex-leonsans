@@ -52,7 +52,7 @@ function (_MC$API$MonoIncident) {
     }
   }, {
     key: "onProgress",
-    value: function onProgress(f, m) {
+    value: function onProgress(f) {
       var _this = this;
 
       var drawning = function drawning() {
@@ -98,8 +98,8 @@ function (_MC$API$MonoIncident) {
           _this.element.entity.leon[t] = f * (_this.targetValue[t] - _this.initialValue[t]) + _this.initialValue[t];
 
           if (t === "completion_rate") {
-            var i = void 0,
-                total = _this.element.entity.leon.drawing.length;
+            var i = void 0;
+            var total = _this.element.entity.leon.drawing.length;
 
             for (i = 0; i < total; i++) {
               _this.element.entity.leon.drawing[i].value = f * (_this.targetValue[t] - _this.initialValue[t]) + _this.initialValue[t];

@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = {
+export default {
   LeonAtrs: [
     "completion_rate",
     "weight",

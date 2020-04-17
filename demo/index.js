@@ -1,6 +1,6 @@
 const MotorCortex = require("@kissmybutton/motorcortex/");
 const Player = require("@kissmybutton/motorcortex-player/");
-const LeonPlugin = require("../src/main");
+const LeonPlugin = require("../src/index");
 const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
 
 const css = `.container {

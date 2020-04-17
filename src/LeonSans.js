@@ -1,5 +1,5 @@
-const MC = require("@kissmybutton/motorcortex");
-const leonSans = require("./src/index");
+import MC from "@kissmybutton/motorcortex";
+import leonSans from "./src/index.js";
 let cValue = 0;
 const PI2 = 2 * Math.PI;
 
@@ -22,7 +22,6 @@ class LeonSans extends MC.API.DOMClip {
     canvas.style.width = this.sw + "px";
     canvas.style.height = this.sh + "px";
     this.ctx.scale(pixelRatio, pixelRatio);
-
     const leon = new leonSans({
       text: this.attrs.text,
       color: this.attrs.color,
@@ -111,4 +110,4 @@ class LeonSans extends MC.API.DOMClip {
   }
 }
 
-module.exports = LeonSans;
+export default LeonSans;

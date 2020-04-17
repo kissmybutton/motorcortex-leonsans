@@ -1,6 +1,7 @@
-const MC = require("@kissmybutton/motorcortex");
-const compAtrrs = require("./compoAttributes");
+import MC from "@kissmybutton/motorcortex";
+import compAtrrs from "./compoAttributes";
 let dont = false;
+
 class testIn extends MC.API.MonoIncident {
   getScratchValue() {
     if (this.attributeKey === "LeonAtrs") {
@@ -102,4 +103,4 @@ class testIn extends MC.API.MonoIncident {
   }
 }
 
-module.exports = testIn;
+export default testIn;

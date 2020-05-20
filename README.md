@@ -55,15 +55,15 @@ const clipName = new LeonSans.Clip(
 
 | Name        | Are           | Values  |
 | ------------- |:-------------:| -----:|
-| sw      | total width of clip canvas | all positive numbers |
-| sh      | total width of clip height | all positive numbers |
-| text |  the displayin text |  normal text  |
-| weight |  The weight of the font: 1 - 900 |  all positive numbers  |
-| round |  round the corners of font if they are not path |  true / false  |
-| multiply |  aplaying multiply efect wen the font have more then 1 color |  true / false  |
-| drawing |  type of the font efect |  drawing,pattern,colorful,colorPattern  |
-| color |  The colors of each characters this can even be a list   |  hex color   |
-| colorful |  The list colors of each characters if drawing property is colorfull   |  hex color   |
+| sw      | width of clip canvas (how many pixels) | all positive numbers |
+| sh      | height of clip canvas (how many pixels) | all positive numbers |
+| text |  the text to display |  string  |
+| weight |  The weight of the font | number 1 - 900   |
+| round |  round the corners of font if they are not path | boolean |
+| multiply |  applying multiply effect when the font has more then 1 colors |  boolean  |
+| drawing |  type of the font efect |  one of: drawing, pattern, colorful, colorPattern  |
+| color |  The colors of the characters  |  either a color string or a color strings' array   |
+| colorful |  The list of colors of each character. Only applicable in "drawing" property "colorfull"   |  either a color string or a color strings' array   |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  numbers |
 | patternWidth: |  is the width of the lines wen drawing property is pattern  |  numbers    |
 | patternHeight |  is the Height of the lines wen drawing property is pattern   |  numbers  |

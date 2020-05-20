@@ -77,7 +77,12 @@ const test = new LeonSans.Clip(
     // multiply: true,
     drawing: "colorPatter",
     colorful: ["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
-    color: [["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"]],
+    color: [
+      ["rgb(0, 255, 68)", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
+      ["rgb(0, 255, 68)", "#ffe600", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
+
+      ["#ff00fb", "#2a92ce", "#2a92ce40", "#2a92ce2e", "#2a92ce00"]
+    ],
     // pathGap: -1,
     patternWidth: 1,
     patternHeight: 10,
@@ -94,7 +99,7 @@ const test = new LeonSans.Clip(
 const gem = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 1,
         weight: 100
         // tracking: 20,
@@ -106,7 +111,7 @@ const gem = new LeonSans.LeonIncident(
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 0,
         weight: 100
         // tracking: 10,
@@ -127,12 +132,12 @@ const gem = new LeonSans.LeonIncident(
 const meg = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         weight: 900
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         //weight: 100
       }
     }
@@ -146,12 +151,12 @@ const meg = new LeonSans.LeonIncident(
 const mic = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         weight: 100
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         //weight: 100
       }
     }
@@ -165,12 +170,12 @@ const mic = new LeonSans.LeonIncident(
 const gemb = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 0.5
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 1
       }
     }
@@ -183,12 +188,12 @@ const gemb = new LeonSans.LeonIncident(
 const gem2 = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 1
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         completion_rate: 0.5
       }
     }
@@ -202,13 +207,13 @@ const gem2 = new LeonSans.LeonIncident(
 const meg2 = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         weight: 900,
         leading: 10
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         //weight: 100
       }
     }
@@ -222,12 +227,12 @@ const meg2 = new LeonSans.LeonIncident(
 const trak = new LeonSans.LeonIncident(
   {
     animatedAttrs: {
-      LeonAtrs: {
+      LeonAttrs: {
         tracking: 10
       }
     },
     initialValues: {
-      LeonAtrs: {
+      LeonAttrs: {
         //weight: 100
       }
     }

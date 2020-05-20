@@ -4,13 +4,13 @@ let dont = false;
 
 class testIn extends MC.API.MonoIncident {
   getScratchValue() {
-    if (this.attributeKey === "LeonAtrs") {
+    if (this.attributeKey === "LeonAttrs") {
       const obj = {};
-      const LeonAtrs = compAtrrs[this.attributeKey];
-      const currentLeonAtrs = this.element.entity.leon;
+      const LeonAttrs = compAtrrs[this.attributeKey];
+      const currentLeonAttrs = this.element.entity.leon;
 
-      for (let i = 0; i < LeonAtrs.length; i++) {
-        obj[LeonAtrs[i]] = currentLeonAtrs[LeonAtrs[i]];
+      for (let i = 0; i < LeonAttrs.length; i++) {
+        obj[LeonAttrs[i]] = currentLeonAttrs[LeonAttrs[i]];
       }
 
       return obj;
@@ -57,8 +57,8 @@ class testIn extends MC.API.MonoIncident {
     };
 
     const animate = () => {
-      for (let j = 0; j < compAtrrs.LeonAtrs.length; j++) {
-        const t = compAtrrs.LeonAtrs[j];
+      for (let j = 0; j < compAtrrs.LeonAttrs.length; j++) {
+        const t = compAtrrs.LeonAttrs[j];
 
         if (this.targetValue.hasOwnProperty("completion_rate")) {
           dont = false;
@@ -80,8 +80,8 @@ class testIn extends MC.API.MonoIncident {
       }
     };
 
-    for (let j = 0; j < compAtrrs.LeonAtrs.length; j++) {
-      const t = compAtrrs.LeonAtrs[j];
+    for (let j = 0; j < compAtrrs.LeonAttrs.length; j++) {
+      const t = compAtrrs.LeonAttrs[j];
       if (this.initialValue[t] !== this.targetValue[t]) {
         if (this.targetValue.hasOwnProperty("completion_rate")) {
           dont = false;

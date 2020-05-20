@@ -1,7 +1,7 @@
 "use strict";
 
 export default {
-  LeonAtrs: [
+  LeonAttrs: [
     "completion_rate",
     "weight",
     "tracking",

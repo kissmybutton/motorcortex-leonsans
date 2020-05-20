@@ -48,7 +48,7 @@ const clip = new MotorCortex.Clip({
   containerParams,
   audioSources: [
     {
-      src: "./d2.wav",
+      src: "./d2.mp3",
       id: "my-wav",
       base64: false
     }
@@ -59,7 +59,7 @@ const songPlayback = new MotorCortex.AudioPlayback(
   {},
   {
     selector: "~#my-wav",
-    startFrom: 10000,
+    startFrom: 0,
     duration: 5600
   }
 );

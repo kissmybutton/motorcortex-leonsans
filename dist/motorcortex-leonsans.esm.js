@@ -36,6 +36,55 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -5163,7 +5212,7 @@ function (_MC$API$DOMClip) {
 }(MC.API.DOMClip);
 
 var compositeAttributes = {
-  LeonAtrs: ["completion_rate", "weight", "tracking", "leading", "size", "pathGap", "patternWidth", "patternHeight"]
+  LeonAttrs: ["completion_rate", "weight", "tracking", "leading", "size", "pathGap", "patternWidth", "patternHeight"]
 };
 
 var dont = false;
@@ -5182,13 +5231,13 @@ function (_MC$API$MonoIncident) {
   _createClass(testIn, [{
     key: "getScratchValue",
     value: function getScratchValue() {
-      if (this.attributeKey === "LeonAtrs") {
+      if (this.attributeKey === "LeonAttrs") {
         var obj = {};
-        var LeonAtrs = compositeAttributes[this.attributeKey];
-        var currentLeonAtrs = this.element.entity.leon;
+        var LeonAttrs = compositeAttributes[this.attributeKey];
+        var currentLeonAttrs = this.element.entity.leon;
 
-        for (var i = 0; i < LeonAtrs.length; i++) {
-          obj[LeonAtrs[i]] = currentLeonAtrs[LeonAtrs[i]];
+        for (var i = 0; i < LeonAttrs.length; i++) {
+          obj[LeonAttrs[i]] = currentLeonAttrs[LeonAttrs[i]];
         }
 
         return obj;
@@ -5232,8 +5281,8 @@ function (_MC$API$MonoIncident) {
       };
 
       var animate = function animate() {
-        for (var j = 0; j < compositeAttributes.LeonAtrs.length; j++) {
-          var t = compositeAttributes.LeonAtrs[j];
+        for (var j = 0; j < compositeAttributes.LeonAttrs.length; j++) {
+          var t = compositeAttributes.LeonAttrs[j];
 
           if (_this.targetValue.hasOwnProperty("completion_rate")) {
             dont = false;
@@ -5254,8 +5303,8 @@ function (_MC$API$MonoIncident) {
         }
       };
 
-      for (var j = 0; j < compositeAttributes.LeonAtrs.length; j++) {
-        var t = compositeAttributes.LeonAtrs[j];
+      for (var j = 0; j < compositeAttributes.LeonAttrs.length; j++) {
+        var t = compositeAttributes.LeonAttrs[j];
 
         if (this.initialValue[t] !== this.targetValue[t]) {
           if (this.targetValue.hasOwnProperty("completion_rate")) {
@@ -5280,12 +5329,158 @@ function (_MC$API$MonoIncident) {
   return testIn;
 }(MC.API.MonoIncident);
 
+var _COLOR = "color";
+var animatedAttrs = {
+  type: "object",
+  // strict : true,
+  props: {
+    LeonAttrs: {
+      optional: false,
+      type: "object",
+      props: {
+        completion_rate: {
+          type: "number",
+          integer: false,
+          optional: true,
+          max: 1,
+          min: 0
+        },
+        weight: {
+          type: "number",
+          optional: true,
+          min: 0
+        },
+        pathGap: {
+          type: "number",
+          optional: true
+        },
+        patternWidth: {
+          type: "number",
+          optional: true
+        },
+        patternHeight: {
+          type: "number",
+          optional: true
+        },
+        tracking: {
+          type: "number",
+          optional: true
+        },
+        leading: {
+          type: "number",
+          optional: true
+        },
+        size: {
+          type: "number",
+          optional: true
+        },
+        selector: {
+          type: "number",
+          optional: true
+        }
+      }
+    }
+  }
+};
+var clipValidationRules = {
+  canvasId: {
+    type: "string",
+    optional: false
+  },
+  sw: {
+    type: "number",
+    optional: true,
+    min: 0
+  },
+  sh: {
+    type: "number",
+    optional: true,
+    min: 0
+  },
+  text: {
+    type: "string",
+    optional: false
+  },
+  weight: {
+    type: "number",
+    optional: true,
+    min: 0
+  },
+  round: {
+    type: "boolean",
+    optional: true
+  },
+  multiply: {
+    type: "boolean",
+    optional: true
+  },
+  drawing: {
+    type: "enum",
+    values: ["drawing", "pattern", "colorful", "colorPattern"],
+    optional: true
+  },
+  color: {
+    optional: true,
+    type: "array",
+    items: {
+      optional: true,
+      type: "array",
+      items: {
+        type: _COLOR,
+        optional: true
+      }
+    }
+  },
+  colorful: {
+    optional: true,
+    type: "array",
+    items: {
+      type: _COLOR,
+      optional: true
+    }
+  },
+  pathGap: {
+    type: "number",
+    optional: true
+  },
+  patternWidth: {
+    type: "number",
+    optional: true
+  },
+  patternHeight: {
+    type: "number",
+    optional: true
+  },
+  speed: {
+    type: "number",
+    optional: true
+  },
+  tracking: {
+    type: "number",
+    optional: true
+  },
+  leading: {
+    type: "number",
+    optional: true
+  },
+  size: {
+    type: "number",
+    optional: true
+  }
+};
+
 var index = {
   npm_name: "@kissmybutton/motorcortex-leonsans",
-  Clip: LeonSans$1,
+  Clip: {
+    exportable: LeonSans$1,
+    attributesValidationRules: _objectSpread2({}, clipValidationRules)
+  },
   incidents: [{
     exportable: testIn,
-    name: "LeonIncident"
+    name: "LeonIncident",
+    attributesValidationRules: {
+      animatedAttrs: animatedAttrs
+    }
   }],
   compositeAttributes: compositeAttributes
 };

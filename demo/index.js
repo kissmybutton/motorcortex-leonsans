@@ -75,8 +75,8 @@ const test = new LeonSans.Clip(
     weight: 100,
     round: true,
     // multiply: true,
-    drawing: "colorPatter",
-    colorful: ["#64d3ce", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
+    drawing: "colorful",
+    colorful: ["#64d3ce", "#2a92ce82", "#ff003c", "#2a92ce2e", "#2a92ce00"],
     color: [
       ["rgb(0, 255, 68)", "#2a92ce82", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],
       ["rgb(0, 255, 68)", "#ffe600", "#2a92ce40", "#2a92ce2e", "#2a92ce00"],

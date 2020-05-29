@@ -59,7 +59,7 @@ const clipName = new LeonSans.Clip(
 
 | Name        | Are           | Values  |
 | ------------- |:-------------:| -----:|
-| canvasId  | the id of the rendered canvas that contains the text. This id will be used by all `LeonIncident` Incidents, added to the `LeonSans` timeline, via their `selector` property | string | 
+| canvasId  | the id of the rendered canvas that contains the text. This id will be used by all `LeonIncident` Incidents, added to the `Clip` timeline, via their `selector` property | string | 
 | sw      | width of clip canvas (how many pixels) | all positive numbers |
 | sh      | height of clip canvas (how many pixels) | all positive numbers |
 | text |  the text to display |  string  |
@@ -134,7 +134,7 @@ The `LeonIncident` attrs takes on the `animatedAttrs` object just one composite 
 | leading |  The distance between each line of text  |  number    |
 | size |  size of text   |  number |
 
-Along with the attributes, all `LeonIncident` incidents must take on their props the `selector` key which should target the id of their parent LeonSans via the convention: `!#<canvasId>`
+Along with the attributes, all `LeonIncident` incidents must take on their props the `selector` key which targets the canvas id of their parent Clip via the convention: `!#<canvasId>`
 
 # License
 [MIT License](https://opensource.org/licenses/MIT)

@@ -66,13 +66,13 @@ const clipName = new LeonSans.Clip(
 | weight |  The weight of the font | number 1 - 900   |
 | round |  round the corners of font if they are not path | boolean |
 | multiply |  applying multiply effect when the font has more then 1 colors |  boolean  |
-| drawing |  type of the font effect |  one of: "drawing", "pattern", "colorful", "colorPattern"  |
+| drawing |  type of the font effect |  one of: `drawing`, `pattern`, `colorful`, `colorPattern`  |
 | color |  The colors of the characters  |  array of colors   |
-| colorful |  The list of colors of each character. Only applicable in "drawing" property "colorfull"   |  array of colors   |
+| colorful |  The list of colors of each character. Only applicable if drawing property is `colorfull`   |  array of colors   |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  number |
-| patternWidth: |  the width of the lines when drawing property is "pattern"  |  number    |
-| patternHeight |  the Height of the lines when drawing property is "pattern"   |  number  |
-| speed |  speed of color changing  when drawing property is "colorPattern"  |  number, from 0 to 10   |
+| patternWidth: |  the width of the lines when drawing property is `pattern`  |  number    |
+| patternHeight |  the height of the lines when drawing property is `pattern`   |  number  |
+| speed |  speed of color changing  when drawing property is `colorPattern`  |  number, from 0 to 10   |
 | tracking |  The spacing between the characters of a block of text   |  number    |
 | leading |  The distance between each line of text  |  number    |
 | size |  size of text   |  number |

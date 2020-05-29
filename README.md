@@ -1,3 +1,4 @@
+
 # motorcortex-LeonSans
 
 ## [Demo](https://kissmybutton.github.io/motorcortex-leonsans/demo/)
@@ -6,22 +7,25 @@
 ## Installation
 
 ```bash
-$ npm install --save @kissmybutton/motorcortex-LeonSans
+$ npm install --save @kissmybutton/motorcortex-leonsans
 # OR
-$ yarn add @kissmybutton/motorcortex-LeonSans
+$ yarn add @kissmybutton/motorcortex-leonsans
 ```
 
 ## Loading
 
 ```javascript
 const MotorCortex = require("@kissmybutton/motorcortex/");
-const LeonPlugin = require("@kissmybutton/motorcortex-LeonSans");
+const LeonPlugin = require("@kissmybutton/motorcortex-leonsans");
 const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
 ```
 
-# Create Clip
+# LeonSans Incident
+By the use of the `LeonSans` Incident you can instantiate / render a text anywhere in your DOM. The Incident will render a canvas which will host your text. 
+`LeonSans` takes a number of attributes (listed below) that define both the canvas and the rendered text characteristics. 
+`LeonSans` is actually a Clip, as it renders content, and it can accept unlimited number of `LeonSans` Incidents on its timeline, that can animate the rendered text.
 
-## LeonSans
+## Example
 
 ```javascript
 const clipName = new LeonSans.Clip(
@@ -51,34 +55,35 @@ const clipName = new LeonSans.Clip(
 );
 ```
 
-### Clip Attrs
+## Supported Attrs explained
 
 | Name        | Are           | Values  |
 | ------------- |:-------------:| -----:|
+| canvasId  | the id of the rendered canvas that contains the text. This id will be used by all `LeonIncident` Incidents, added to the `LeonSans` timeline, via their `selector` property | string | 
 | sw      | width of clip canvas (how many pixels) | all positive numbers |
 | sh      | height of clip canvas (how many pixels) | all positive numbers |
 | text |  the text to display |  string  |
 | weight |  The weight of the font | number 1 - 900   |
 | round |  round the corners of font if they are not path | boolean |
 | multiply |  applying multiply effect when the font has more then 1 colors |  boolean  |
-| drawing |  type of the font efect |  one of: drawing, pattern, colorful, colorPattern  |
-| color |  The colors of the characters  |  either a color string or a color strings' array   |
-| colorful |  The list of colors of each character. Only applicable in "drawing" property "colorfull"   |  either a color string or a color strings' array   |
-| pathGap |  The gap between each coordinate of the points on a line of each character |  numbers |
-| patternWidth: |  is the width of the lines wen drawing property is pattern  |  numbers    |
-| patternHeight |  is the Height of the lines wen drawing property is pattern   |  numbers  |
-| speed |  speed of color changing  wen drawing property is colorPattern  |  numbers   |
-| tracking |  The spacing between the characters of a block of text   |  numbers    |
-| leading |  The distance between each line of text  |  numbers    |
-| size |  size of text   |  numbers |
+| drawing |  type of the font effect |  one of: "drawing", "pattern", "colorful", "colorPattern"  |
+| color |  The colors of the characters  |  array of colors   |
+| colorful |  The list of colors of each character. Only applicable in "drawing" property "colorfull"   |  array of colors   |
+| pathGap |  The gap between each coordinate of the points on a line of each character |  number |
+| patternWidth: |  the width of the lines when drawing property is "pattern"  |  number    |
+| patternHeight |  the Height of the lines when drawing property is "pattern"   |  number  |
+| speed |  speed of color changing  when drawing property is "colorPattern"  |  number, from 0 to 10   |
+| tracking |  The spacing between the characters of a block of text   |  number    |
+| leading |  The distance between each line of text  |  number    |
+| size |  size of text   |  number |
 
 
 
 
 
-# Create Incident
+# LeonIncident
 
-## LeonIncident
+## Example
 
 ```javascript
 const nameOfIncident = new LeonSans.LeonIncident(
@@ -115,31 +120,29 @@ const nameOfIncident = new LeonSans.LeonIncident(
 );
 ```
 
-### Incident Attrs
+## Supported Attrs explained
+The `LeonIncident` attrs takes on the `animatedAttrs` object just one composite attribute: `LeonAtrs`. The supported attributes of this composite attribute are:
 
 | Name        | Are           | Values  |
 | ------------- |:-------------:| -----:|
-| completion_rate |  The rate of text complition |  num from 0 to 1  |
+| completion_rate |  The rate of text completion |  num from 0 to 1  |
 | weight |  The weight of the font: 1 - 900 |  all positive numbers  |
-| pathGap |  The gap between each coordinate of the points on a line of each character |  numbers |
-| patternWidth: |  is the width of the lines wen drawing property is pattern  |  numbers    |
-| patternHeight |  is the Height of the lines wen drawing property is pattern   |  numbers  |
-| tracking |  The spacing between the characters of a block of text   |  numbers    |
-| leading |  The distance between each line of text  |  numbers    |
-| size |  size of text   |  numbers |
-| selector |  sekector of insident sould be  the same with  canvasId and ! infront of it|  numbers |
+| pathGap |  The gap between each coordinate of the points on a line of each character |  number |
+| patternWidth: |  the width of the lines when drawing property is `pattern`  |  number    |
+| patternHeight |  the height of the lines when drawing property is `pattern`   |  number  |
+| tracking |  The spacing between the characters of a block of text   |  number    |
+| leading |  The distance between each line of text  |  number    |
+| size |  size of text   |  number |
+
+Along with the attributes, all `LeonIncident` incidents must take on their props the `selector` key which should target the id of their parent LeonSans via the convention: `!#<canvasId>`
+
+# License
+[MIT License](https://opensource.org/licenses/MIT)
 
 
-# Add incident to your clip
-
-```javascript
-clipName.addIncident(nameOfIncident, 0);
-
-```
-
-
-
-
+  
+  
+[![Kiss My Button](https://presskit.kissmybutton.gr/logos/kissmybutton-logo-small.png)](https://kissmybutton.gr)
 
 
 

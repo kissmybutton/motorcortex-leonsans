@@ -23,7 +23,7 @@ const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
 # LeonSans Clip
 By the use of the plugin's `Clip` you can instantiate / render a text anywhere in your DOM. The Incident will render a canvas which will host your text. 
 
-The `Clip` takes a number of attributes (listed below) that define both the canvas and the rendered text characteristics, it renders content and can accept an unlimited number of `LeonSans` Incidents on its timeline, that can animate the rendered text.
+The `Clip` takes a number of attributes (listed below) that define both the canvas and the rendered text characteristics and it can accept an unlimited number of `LeonSans` Incidents that can animate the rendered text.
 
 ## Example
 

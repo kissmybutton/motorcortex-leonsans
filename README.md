@@ -67,7 +67,7 @@ const clipName = new LeonSans.Clip(
 | round |  round the corners of font if they are not path | boolean |
 | multiply |  applying multiply effect when the font has more then 1 colors |  boolean  |
 | drawing |  type of the font effect |  one of: `drawing`, `pattern`, `colorful`, `colorPattern`  |
-| color |  The colors of the characters  |  array of colors   |
+| color |  The colors of the characters  |  array of arrays of colors   |
 | colorful |  The list of colors of each character. Only applicable if drawing property is `colorfull`   |  array of colors   |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  number |
 | patternWidth: |  the width of the lines when drawing property is `pattern`  |  number    |
@@ -126,7 +126,7 @@ The `LeonIncident` attrs takes on the `animatedAttrs` object just one composite 
 | Name        | Are           | Values  |
 | ------------- |:-------------:| -----:|
 | completion_rate |  The rate of text completion |  num from 0 to 1  |
-| weight |  The weight of the font: 1 - 900 |  all positive numbers  |
+| weight |  The weight of the font: 1 - 900 |  number  |
 | pathGap |  The gap between each coordinate of the points on a line of each character |  number |
 | patternWidth: |  the width of the lines when drawing property is `pattern`  |  number    |
 | patternHeight |  the height of the lines when drawing property is `pattern`   |  number  |

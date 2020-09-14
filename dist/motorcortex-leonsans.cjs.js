@@ -1,10 +1,14 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var MC = require('@kissmybutton/motorcortex');
 
-var MC = _interopDefault(require('@kissmybutton/motorcortex'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var MC__default = /*#__PURE__*/_interopDefaultLegacy(MC);
 
 function _typeof(obj) {
+  "@babel/helpers - typeof";
+
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function (obj) {
       return typeof obj;
@@ -120,6 +124,19 @@ function _setPrototypeOf(o, p) {
   return _setPrototypeOf(o, p);
 }
 
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -134,6 +151,25 @@ function _possibleConstructorReturn(self, call) {
   }
 
   return _assertThisInitialized(self);
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
 }
 
 function _superPropBase(object, property) {
@@ -166,9 +202,81 @@ function _get(target, property, receiver) {
   return _get(target, property, receiver || target);
 }
 
-var Dispatcher =
-/*#__PURE__*/
-function () {
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+
+      var F = function () {};
+
+      return {
+        s: F,
+        n: function () {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function (e) {
+          throw e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function () {
+      it = o[Symbol.iterator]();
+    },
+    n: function () {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function (e) {
+      didErr = true;
+      err = e;
+    },
+    f: function () {
+      try {
+        if (!normalCompletion && it.return != null) it.return();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+var Dispatcher = /*#__PURE__*/function () {
   function Dispatcher() {
     _classCallCheck(this, Dispatcher);
 
@@ -4183,9 +4291,7 @@ function getAlignGapX(align, alignGapX) {
   }
 }
 
-var Model =
-/*#__PURE__*/
-function () {
+var Model = /*#__PURE__*/function () {
   function Model() {
     _classCallCheck(this, Model);
 
@@ -4365,12 +4471,12 @@ function () {
       for (var _i = 0, _tmp = tmp; _i < _tmp.length; _i++) {
         var a = _tmp[_i];
         aGapX = setAlignGapX(maxW, a.tw);
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+
+        var _iterator = _createForOfIteratorHelper(a.arr),
+            _step;
 
         try {
-          for (var _iterator = a.arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var b = _step.value;
             b.alignGapX = aGapX;
             b.pointsLength = getLengths(b, this);
@@ -4381,66 +4487,38 @@ function () {
             this.drawing_.push(drawing);
             b.drawing = drawing; // add converted Vector
 
-            var _iteratorNormalCompletion2 = true;
-            var _didIteratorError2 = false;
-            var _iteratorError2 = undefined;
+            var _iterator2 = _createForOfIteratorHelper(b.typo.p),
+                _step2;
 
             try {
-              for (var _iterator2 = b.typo.p[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var c = _step2.value;
                 c.cv = [];
-                var _iteratorNormalCompletion3 = true;
-                var _didIteratorError3 = false;
-                var _iteratorError3 = undefined;
+
+                var _iterator3 = _createForOfIteratorHelper(c.v),
+                    _step3;
 
                 try {
-                  for (var _iterator3 = c.v[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
                     var d = _step3.value;
                     c.cv.push(d.convert(b, this));
                   }
                 } catch (err) {
-                  _didIteratorError3 = true;
-                  _iteratorError3 = err;
+                  _iterator3.e(err);
                 } finally {
-                  try {
-                    if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-                      _iterator3["return"]();
-                    }
-                  } finally {
-                    if (_didIteratorError3) {
-                      throw _iteratorError3;
-                    }
-                  }
+                  _iterator3.f();
                 }
               }
             } catch (err) {
-              _didIteratorError2 = true;
-              _iteratorError2 = err;
+              _iterator2.e(err);
             } finally {
-              try {
-                if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-                  _iterator2["return"]();
-                }
-              } finally {
-                if (_didIteratorError2) {
-                  throw _iteratorError2;
-                }
-              }
+              _iterator2.f();
             }
           }
         } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
+          _iterator.e(err);
         } finally {
-          try {
-            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-              _iterator["return"]();
-            }
-          } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
-            }
-          }
+          _iterator.f();
         }
       }
 
@@ -4557,10 +4635,10 @@ function () {
   return Model;
 }();
 
-var LeonSans =
-/*#__PURE__*/
-function (_Dispatcher) {
+var LeonSans = /*#__PURE__*/function (_Dispatcher) {
   _inherits(LeonSans, _Dispatcher);
+
+  var _super = _createSuper(LeonSans);
 
   function LeonSans() {
     var _this;
@@ -4599,7 +4677,7 @@ function (_Dispatcher) {
 
     _classCallCheck(this, LeonSans);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(LeonSans).call(this));
+    _this = _super.call(this);
     _this.size_ = size;
     _this.weight_ = weight;
     _this.color_ = color;
@@ -5099,15 +5177,15 @@ function (_Dispatcher) {
 var cValue = 0;
 var PI2$1 = 2 * Math.PI;
 
-var LeonSans$1 =
-/*#__PURE__*/
-function (_MC$API$DOMClip) {
+var LeonSans$1 = /*#__PURE__*/function (_MC$API$DOMClip) {
   _inherits(LeonSans$1, _MC$API$DOMClip);
+
+  var _super = _createSuper(LeonSans$1);
 
   function LeonSans$1() {
     _classCallCheck(this, LeonSans$1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LeonSans$1).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(LeonSans$1, [{
@@ -5213,7 +5291,7 @@ function (_MC$API$DOMClip) {
   }]);
 
   return LeonSans$1;
-}(MC.API.DOMClip);
+}(MC__default['default'].API.DOMClip);
 
 var compositeAttributes = {
   LeonAttrs: ["completion_rate", "weight", "tracking", "leading", "size", "pathGap", "patternWidth", "patternHeight"]
@@ -5221,15 +5299,15 @@ var compositeAttributes = {
 
 var dont = false;
 
-var testIn =
-/*#__PURE__*/
-function (_MC$API$MonoIncident) {
+var testIn = /*#__PURE__*/function (_MC$API$MonoIncident) {
   _inherits(testIn, _MC$API$MonoIncident);
+
+  var _super = _createSuper(testIn);
 
   function testIn() {
     _classCallCheck(this, testIn);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(testIn).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(testIn, [{
@@ -5331,7 +5409,7 @@ function (_MC$API$MonoIncident) {
   }]);
 
   return testIn;
-}(MC.API.MonoIncident);
+}(MC__default['default'].API.MonoIncident);
 
 var _COLOR = "color";
 var animatedAttrs = {

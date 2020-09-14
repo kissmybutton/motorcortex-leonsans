@@ -28,9 +28,7 @@ const css = `.container {
 
 const html = `<div class="container">
 
-<div class="row" >
-  <div class="cel"><div class="test"></div> </div>
-</div>
+
 
 </div>`;
 
@@ -69,9 +67,9 @@ clip.addIncident(songPlayback, 0);
 const test = new LeonSans.Clip(
   {
     canvasId: "leonObj",
-    sw: 1400,
-    sh: 600,
-    text: "KISSMYBUTTON\nLEON_SANS PLUGIN",
+    sw: 1400 / 2,
+    sh: 700 / 2,
+    text: "KISSMYBUTTON\nLEON_SANS\nPLUGIN",
     weight: 100,
     round: true,
     // multiply: true,
@@ -92,7 +90,7 @@ const test = new LeonSans.Clip(
     size: 80
   },
   {
-    selector: ".test"
+    selector: ".container"
   }
 );
 
@@ -209,7 +207,7 @@ const meg2 = new LeonSans.LeonIncident(
     animatedAttrs: {
       LeonAttrs: {
         weight: 900,
-        leading: 10
+        leading: 7
       }
     },
     initialValues: {
@@ -224,33 +222,12 @@ const meg2 = new LeonSans.LeonIncident(
   }
 );
 
-const trak = new LeonSans.LeonIncident(
-  {
-    animatedAttrs: {
-      LeonAttrs: {
-        tracking: 10
-      }
-    },
-    initialValues: {
-      LeonAttrs: {
-        //weight: 100
-      }
-    }
-  },
-  {
-    duration: 1300,
-    selector: "!#leonObj",
-    easing: "easeOutCirc"
-  }
-);
-
 test.addIncident(gem, 0);
 test.addIncident(meg, 900);
 test.addIncident(mic, 950);
 test.addIncident(gemb, 1100);
 test.addIncident(gem2, 2400);
 test.addIncident(meg2, 3400);
-test.addIncident(trak, 4300);
 clip.addIncident(test, 0);
 
 new Player({ clip });

@@ -5171,8 +5171,8 @@ var LeonSans = /*#__PURE__*/function (_Dispatcher) {
 var cValue = 0;
 var PI2$1 = 2 * Math.PI;
 
-var LeonSans$1 = /*#__PURE__*/function (_MC$API$DOMClip) {
-  _inherits(LeonSans$1, _MC$API$DOMClip);
+var LeonSans$1 = /*#__PURE__*/function (_MC$BrowserClip) {
+  _inherits(LeonSans$1, _MC$BrowserClip);
 
   var _super = _createSuper(LeonSans$1);
 
@@ -5285,7 +5285,7 @@ var LeonSans$1 = /*#__PURE__*/function (_MC$API$DOMClip) {
   }]);
 
   return LeonSans$1;
-}(MC.API.DOMClip);
+}(MC.BrowserClip);
 
 var compositeAttributes = {
   LeonAttrs: ["completion_rate", "weight", "tracking", "leading", "size", "pathGap", "patternWidth", "patternHeight"]
@@ -5293,8 +5293,8 @@ var compositeAttributes = {
 
 var dont = false;
 
-var testIn = /*#__PURE__*/function (_MC$API$MonoIncident) {
-  _inherits(testIn, _MC$API$MonoIncident);
+var testIn = /*#__PURE__*/function (_MC$Effect) {
+  _inherits(testIn, _MC$Effect);
 
   var _super = _createSuper(testIn);
 
@@ -5403,7 +5403,7 @@ var testIn = /*#__PURE__*/function (_MC$API$MonoIncident) {
   }]);
 
   return testIn;
-}(MC.API.MonoIncident);
+}(MC.Effect);
 
 var _COLOR = "color";
 var animatedAttrs = {

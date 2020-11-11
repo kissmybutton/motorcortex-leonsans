@@ -3,7 +3,7 @@ import leonSans from "./src/index.js";
 let cValue = 0;
 const PI2 = 2 * Math.PI;
 
-class LeonSans extends MC.API.DOMClip {
+class LeonSans extends MC.BrowserClip {
   get html() {
     return ` <canvas> </canvas>`;
   }

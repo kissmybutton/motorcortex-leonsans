@@ -2,7 +2,7 @@ import MC from "@kissmybutton/motorcortex";
 import compAtrrs from "./compoAttributes";
 let dont = false;
 
-class testIn extends MC.API.MonoIncident {
+class testIn extends MC.Effect {
   getScratchValue() {
     if (this.attributeKey === "LeonAttrs") {
       const obj = {};

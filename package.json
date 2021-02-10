@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-leonsans",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "LeonSans plugin for MotorCortex",
   "main": "dist/motorcortex-leonsans.cjs.js",
   "module": "dist/motorcortex-leonsans.esm.js",
@@ -78,10 +78,11 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.3.0"
+    "rollup-plugin-terser": "^5.3.0",
+    "@rollup/plugin-json": "^4.1.0"
   },
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "6.2.2"
+    "@kissmybutton/motorcortex": "6.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

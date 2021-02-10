@@ -5545,11 +5545,12 @@ var clipValidationRules = {
   }
 };
 
-var pkg = require("../package.json");
+var name = "@kissmybutton/motorcortex-leonsans";
+var version = "1.0.11";
 
 var index = {
-  npm_name: pkg.name,
-  version: pkg.version,
+  npm_name: name,
+  version: version,
   Clip: {
     exportable: LeonSans$1,
     attributesValidationRules: _objectSpread2({}, clipValidationRules)

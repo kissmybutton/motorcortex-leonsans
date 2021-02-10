@@ -3,6 +3,7 @@ import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
+import json from '@rollup/plugin-json';
 
 export default [
   {
@@ -12,7 +13,7 @@ export default [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }
     ],
-    plugins: [resolve(), commonjs(), babel()]
+    plugins: [resolve(), commonjs(), babel(),json()]
   },
   {
     input: "src/index.js",
@@ -31,7 +32,8 @@ export default [
       resolve({ mainFields: ["module", "main", "browser"] }),
       commonjs(),
       babel(),
-      terser()
+      terser(),
+      json()
     ]
   }
 ];

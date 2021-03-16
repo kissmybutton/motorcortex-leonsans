@@ -130,7 +130,7 @@ function _isNativeReflectConstruct() {
   if (typeof Proxy === "function") return true;
 
   try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
     return true;
   } catch (e) {
     return false;
@@ -341,7 +341,7 @@ var FR_1 = 1;
 var FR_2 = 0.78;
 var RECT_RATIO = 0.49;
 var MAX_SHAKE = 120;
-var PI2 = 2 * Math.PI;
+var PI2$1 = 2 * Math.PI;
 function getAmplitude(amplitude, scale) {
   return MAX_SHAKE * amplitude * scale;
 }
@@ -546,7 +546,7 @@ function Lines(ctx, data) {
 
     if (pos.type == "a") {
       ctx.beginPath();
-      ctx.arc(pos.x, pos.y, pos.radius * d.drawing.value, 0, PI2);
+      ctx.arc(pos.x, pos.y, pos.radius * d.drawing.value, 0, PI2$1);
       ctx.fill();
       ctx.closePath();
     } else if (pos.type == "m") {
@@ -569,7 +569,7 @@ function Points(ctx, data) {
   var i;
 
   for (i = 0; i < total; i++) {
-    eachLine_(ctx, data.lines[i]);
+    eachLine_$1(ctx, data.lines[i]);
   }
 
   ctx.restore();
@@ -595,10 +595,10 @@ function eachPoint_(ctx, p, data) {
     if (mp.type == "b") {
       ctx.fillStyle = "#ff2a00";
       ctx.beginPath();
-      ctx.arc(cp.x3 + (cp.x3 - cp.x2), cp.y3 + (cp.y3 - cp.y2), 1.5, 0, PI2);
+      ctx.arc(cp.x3 + (cp.x3 - cp.x2), cp.y3 + (cp.y3 - cp.y2), 1.5, 0, PI2$1);
       ctx.fill();
       ctx.beginPath();
-      ctx.arc(cp.x2, cp.y2, 1.5, 0, PI2);
+      ctx.arc(cp.x2, cp.y2, 1.5, 0, PI2$1);
       ctx.fill();
       ctx.beginPath();
       ctx.moveTo(cp.x2, cp.y2);
@@ -607,21 +607,21 @@ function eachPoint_(ctx, p, data) {
       ctx.stroke();
       ctx.beginPath();
       ctx.fillStyle = "#ffffff";
-      ctx.arc(cp.x3, cp.y3, 2.5, 0, PI2);
+      ctx.arc(cp.x3, cp.y3, 2.5, 0, PI2$1);
       ctx.fill();
       ctx.stroke();
     } else {
       ctx.beginPath();
       ctx.fillStyle = "#ffffff";
       ctx.strokeStyle = "#ff2a00";
-      ctx.arc(cp.x, cp.y, 2.5, 0, PI2);
+      ctx.arc(cp.x, cp.y, 2.5, 0, PI2$1);
       ctx.fill();
       ctx.stroke();
     }
   }
 }
 
-function eachLine_(ctx, d) {
+function eachLine_$1(ctx, d) {
   var pos = d.pos;
 
   if (pos.type != "a") {
@@ -715,7 +715,7 @@ function Wave(ctx, data, scale, amplitude, weight, fps) {
   for (i = 0; i < saveDot.length; i++) {
     p = saveDot[i];
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, PI2);
+    ctx.arc(p.x, p.y, p.radius, 0, PI2$1);
     ctx.fill();
   }
 }
@@ -738,7 +738,7 @@ function Pattern(ctx, data, w, h) {
 
     if (p.type == "a") {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, w3, 0, PI2);
+      ctx.arc(p.x, p.y, w3, 0, PI2$1);
       ctx.fill();
     } else {
       ctx.beginPath();
@@ -932,7 +932,7 @@ function Colorful(ctx, model, colors) {
       if (pos.type == "a") {
         setColor(ctx);
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, pos.radius * d.drawing.value, 0, PI2);
+        ctx.arc(pos.x, pos.y, pos.radius * d.drawing.value, 0, PI2$1);
         ctx.fill();
         ctx.closePath();
       } else if (pos.type == "m") {
@@ -1007,7 +1007,7 @@ function PixiLines(graphics, data, lineW, color) {
     total = data.lines.length;
 
     for (i = 0; i < total; i++) {
-      eachLine_$1(graphics, data.lines[i], lineW, color);
+      eachLine_(graphics, data.lines[i], lineW, color);
     }
   } else {
     total = data.drawingPaths.length * data.drawing.value;
@@ -1018,7 +1018,7 @@ function PixiLines(graphics, data, lineW, color) {
   }
 }
 
-function eachLine_$1(graphics, data, lineW, color) {
+function eachLine_(graphics, data, lineW, color) {
   var pos = data.pos;
 
   if (pos.type == "a") {
@@ -4312,6 +4312,60 @@ var Model = /*#__PURE__*/function () {
   }
 
   _createClass(Model, [{
+    key: "data",
+    get: function get() {
+      return this.data_;
+    }
+  }, {
+    key: "paths",
+    get: function get() {
+      return this.paths_;
+    }
+  }, {
+    key: "lines",
+    get: function get() {
+      return this.lines_;
+    },
+    set: function set(v) {
+      this.lines_ = v;
+    }
+  }, {
+    key: "lineWidth",
+    get: function get() {
+      return this.lineWidth_;
+    }
+  }, {
+    key: "fontRatio",
+    get: function get() {
+      return this.fontRatio_;
+    }
+  }, {
+    key: "scale",
+    get: function get() {
+      return this.scale_;
+    }
+  }, {
+    key: "rect",
+    get: function get() {
+      return this.rect_;
+    }
+  }, {
+    key: "drawing",
+    get: function get() {
+      return this.drawing_;
+    }
+  }, {
+    key: "align",
+    get: function get() {
+      return this.align_;
+    },
+    set: function set(v) {
+      if (this.align_ != v) {
+        this.align_ = v;
+        this.setPosition();
+      }
+    }
+  }, {
     key: "position",
     value: function position(x, y) {
       if (this.rect_.x != x || this.rect_.y != y) {
@@ -4576,66 +4630,12 @@ var Model = /*#__PURE__*/function () {
       this.scale_ = 1;
       this.fontRatio_ = 1;
     }
-  }, {
-    key: "data",
-    get: function get() {
-      return this.data_;
-    }
-  }, {
-    key: "paths",
-    get: function get() {
-      return this.paths_;
-    }
-  }, {
-    key: "lines",
-    get: function get() {
-      return this.lines_;
-    },
-    set: function set(v) {
-      this.lines_ = v;
-    }
-  }, {
-    key: "lineWidth",
-    get: function get() {
-      return this.lineWidth_;
-    }
-  }, {
-    key: "fontRatio",
-    get: function get() {
-      return this.fontRatio_;
-    }
-  }, {
-    key: "scale",
-    get: function get() {
-      return this.scale_;
-    }
-  }, {
-    key: "rect",
-    get: function get() {
-      return this.rect_;
-    }
-  }, {
-    key: "drawing",
-    get: function get() {
-      return this.drawing_;
-    }
-  }, {
-    key: "align",
-    set: function set(v) {
-      if (this.align_ != v) {
-        this.align_ = v;
-        this.setPosition();
-      }
-    },
-    get: function get() {
-      return this.align_;
-    }
   }]);
 
   return Model;
 }();
 
-var LeonSans = /*#__PURE__*/function (_Dispatcher) {
+var LeonSans$1 = /*#__PURE__*/function (_Dispatcher) {
   _inherits(LeonSans, _Dispatcher);
 
   var _super = _createSuper(LeonSans);
@@ -4718,6 +4718,195 @@ var LeonSans = /*#__PURE__*/function (_Dispatcher) {
     key: "off",
     value: function off(event, callback) {
       _get(_getPrototypeOf(LeonSans.prototype), "off", this).call(this, event, callback);
+    }
+  }, {
+    key: "text",
+    get: function get() {
+      return this.str_;
+    },
+    set: function set(str) {
+      if (this.str_ == str) return;
+      this.str_ = str;
+      this.update();
+    }
+  }, {
+    key: "size",
+    get: function get() {
+      return this.size_;
+    },
+    set: function set(v) {
+      if (this.size_ == v) return;
+      this.size_ = v;
+      this.update();
+      this.isForceRander_ = true;
+    }
+  }, {
+    key: "weight",
+    get: function get() {
+      return this.weight_;
+    },
+    set: function set(v) {
+      if (v < MIN_FONT_WEIGHT) {
+        v = MIN_FONT_WEIGHT;
+      } else if (v > MAX_FONT_WEIGHT) {
+        v = MAX_FONT_WEIGHT;
+      }
+
+      if (this.weight_ == v) return;
+      this.weight_ = v;
+      this.update();
+      this.isForceRander_ = true;
+    }
+  }, {
+    key: "color",
+    get: function get() {
+      return this.color_;
+    },
+    set: function set(v) {
+      if (this.color_ == v) return;
+      this.color_ = v;
+    }
+  }, {
+    key: "tracking",
+    get: function get() {
+      return this.tracking_;
+    },
+    set: function set(v) {
+      if (this.tracking_ == v) return;
+      this.tracking_ = v;
+      this.update();
+      this.isForceRander_ = true;
+    }
+  }, {
+    key: "leading",
+    get: function get() {
+      return this.leading_;
+    },
+    set: function set(v) {
+      if (this.leading_ == v) return;
+      this.leading_ = v;
+      this.update();
+      this.isForceRander_ = true;
+    }
+  }, {
+    key: "align",
+    get: function get() {
+      return this.model.align;
+    },
+    set: function set(v) {
+      if (this.model.align != v) {
+        this.model.align = v;
+        this.updateID_++;
+        this.updateSignal();
+      }
+    }
+  }, {
+    key: "pathGap",
+    get: function get() {
+      return this.pathGap_;
+    },
+    set: function set(v) {
+      if (this.pathGap_ != v) {
+        this.pathGap_ = v;
+        this.updatePatternPaths(true);
+        this.updateWavePaths(true);
+        this.isForceRander_ = true;
+      }
+    }
+  }, {
+    key: "amplitude",
+    get: function get() {
+      return this.amplitude_;
+    },
+    set: function set(v) {
+      this.amplitude_ = v;
+    }
+  }, {
+    key: "rect",
+    get: function get() {
+      return this.model.rect;
+    }
+  }, {
+    key: "maxWidth",
+    get: function get() {
+      return this.width_;
+    },
+    set: function set(v) {
+      if (this.width_ == v) return;
+      this.width_ = v;
+      this.update();
+    }
+  }, {
+    key: "breakWord",
+    get: function get() {
+      return this.breakWord_;
+    },
+    set: function set(v) {
+      if (this.breakWord_ == v) return;
+      this.breakWord_ = v;
+      this.update();
+    }
+  }, {
+    key: "isPath",
+    get: function get() {
+      return this.isPath_;
+    },
+    set: function set(v) {
+      this.isPath_ = v;
+      this.updatePatternPaths(true);
+    }
+  }, {
+    key: "isWave",
+    get: function get() {
+      return this.isWave_;
+    },
+    set: function set(v) {
+      this.isWave_ = v;
+      this.updateWavePaths(true);
+    }
+  }, {
+    key: "fps",
+    get: function get() {
+      return this.fps_;
+    },
+    set: function set(v) {
+      this.fps_ = v;
+      this.fpsTime_ = 1000 / this.fps_;
+    }
+  }, {
+    key: "lineWidth",
+    get: function get() {
+      return this.model.lineWidth;
+    }
+  }, {
+    key: "scale",
+    get: function get() {
+      return this.model.scale;
+    }
+  }, {
+    key: "drawing",
+    get: function get() {
+      return this.model.drawing;
+    }
+  }, {
+    key: "data",
+    get: function get() {
+      return this.model.data;
+    }
+  }, {
+    key: "paths",
+    get: function get() {
+      return this.model.paths;
+    }
+  }, {
+    key: "drawingPaths",
+    get: function get() {
+      return this.model.drawingPaths;
+    }
+  }, {
+    key: "wavePaths",
+    get: function get() {
+      return this.model.wavePaths;
     }
   }, {
     key: "position",
@@ -4980,215 +5169,31 @@ var LeonSans = /*#__PURE__*/function (_Dispatcher) {
       ctx.rect(this.model.rect.x, this.model.rect.y, this.model.rect.w, this.model.rect.h);
       ctx.stroke();
     }
-  }, {
-    key: "text",
-    get: function get() {
-      return this.str_;
-    },
-    set: function set(str) {
-      if (this.str_ == str) return;
-      this.str_ = str;
-      this.update();
-    }
-  }, {
-    key: "size",
-    get: function get() {
-      return this.size_;
-    },
-    set: function set(v) {
-      if (this.size_ == v) return;
-      this.size_ = v;
-      this.update();
-      this.isForceRander_ = true;
-    }
-  }, {
-    key: "weight",
-    get: function get() {
-      return this.weight_;
-    },
-    set: function set(v) {
-      if (v < MIN_FONT_WEIGHT) {
-        v = MIN_FONT_WEIGHT;
-      } else if (v > MAX_FONT_WEIGHT) {
-        v = MAX_FONT_WEIGHT;
-      }
-
-      if (this.weight_ == v) return;
-      this.weight_ = v;
-      this.update();
-      this.isForceRander_ = true;
-    }
-  }, {
-    key: "color",
-    get: function get() {
-      return this.color_;
-    },
-    set: function set(v) {
-      if (this.color_ == v) return;
-      this.color_ = v;
-    }
-  }, {
-    key: "tracking",
-    get: function get() {
-      return this.tracking_;
-    },
-    set: function set(v) {
-      if (this.tracking_ == v) return;
-      this.tracking_ = v;
-      this.update();
-      this.isForceRander_ = true;
-    }
-  }, {
-    key: "leading",
-    get: function get() {
-      return this.leading_;
-    },
-    set: function set(v) {
-      if (this.leading_ == v) return;
-      this.leading_ = v;
-      this.update();
-      this.isForceRander_ = true;
-    }
-  }, {
-    key: "align",
-    get: function get() {
-      return this.model.align;
-    },
-    set: function set(v) {
-      if (this.model.align != v) {
-        this.model.align = v;
-        this.updateID_++;
-        this.updateSignal();
-      }
-    }
-  }, {
-    key: "pathGap",
-    get: function get() {
-      return this.pathGap_;
-    },
-    set: function set(v) {
-      if (this.pathGap_ != v) {
-        this.pathGap_ = v;
-        this.updatePatternPaths(true);
-        this.updateWavePaths(true);
-        this.isForceRander_ = true;
-      }
-    }
-  }, {
-    key: "amplitude",
-    get: function get() {
-      return this.amplitude_;
-    },
-    set: function set(v) {
-      this.amplitude_ = v;
-    }
-  }, {
-    key: "rect",
-    get: function get() {
-      return this.model.rect;
-    }
-  }, {
-    key: "maxWidth",
-    set: function set(v) {
-      if (this.width_ == v) return;
-      this.width_ = v;
-      this.update();
-    },
-    get: function get() {
-      return this.width_;
-    }
-  }, {
-    key: "breakWord",
-    set: function set(v) {
-      if (this.breakWord_ == v) return;
-      this.breakWord_ = v;
-      this.update();
-    },
-    get: function get() {
-      return this.breakWord_;
-    }
-  }, {
-    key: "isPath",
-    get: function get() {
-      return this.isPath_;
-    },
-    set: function set(v) {
-      this.isPath_ = v;
-      this.updatePatternPaths(true);
-    }
-  }, {
-    key: "isWave",
-    get: function get() {
-      return this.isWave_;
-    },
-    set: function set(v) {
-      this.isWave_ = v;
-      this.updateWavePaths(true);
-    }
-  }, {
-    key: "fps",
-    get: function get() {
-      return this.fps_;
-    },
-    set: function set(v) {
-      this.fps_ = v;
-      this.fpsTime_ = 1000 / this.fps_;
-    }
-  }, {
-    key: "lineWidth",
-    get: function get() {
-      return this.model.lineWidth;
-    }
-  }, {
-    key: "scale",
-    get: function get() {
-      return this.model.scale;
-    }
-  }, {
-    key: "drawing",
-    get: function get() {
-      return this.model.drawing;
-    }
-  }, {
-    key: "data",
-    get: function get() {
-      return this.model.data;
-    }
-  }, {
-    key: "paths",
-    get: function get() {
-      return this.model.paths;
-    }
-  }, {
-    key: "drawingPaths",
-    get: function get() {
-      return this.model.drawingPaths;
-    }
-  }, {
-    key: "wavePaths",
-    get: function get() {
-      return this.model.wavePaths;
-    }
   }]);
 
   return LeonSans;
 }(Dispatcher);
 
 var cValue = 0;
-var PI2$1 = 2 * Math.PI;
+var PI2 = 2 * Math.PI;
 
-var LeonSans$1 = /*#__PURE__*/function (_MC$BrowserClip) {
-  _inherits(LeonSans$1, _MC$BrowserClip);
+var LeonSans = /*#__PURE__*/function (_MC$BrowserClip) {
+  _inherits(LeonSans, _MC$BrowserClip);
 
-  var _super = _createSuper(LeonSans$1);
+  var _super = _createSuper(LeonSans);
 
-  function LeonSans$1() {
-    _classCallCheck(this, LeonSans$1);
+  function LeonSans() {
+    _classCallCheck(this, LeonSans);
 
     return _super.apply(this, arguments);
   }
 
-  _createClass(LeonSans$1, [{
+  _createClass(LeonSans, [{
+    key: "html",
+    get: function get() {
+      return " <canvas> </canvas>";
+    }
+  }, {
     key: "onAfterRender",
     value: function onAfterRender() {
       this.cValue = 0;
@@ -5202,7 +5207,7 @@ var LeonSans$1 = /*#__PURE__*/function (_MC$BrowserClip) {
       canvas.style.width = this.sw + "px";
       canvas.style.height = this.sh + "px";
       this.ctx.scale(pixelRatio, pixelRatio);
-      var leon = new LeonSans({
+      var leon = new LeonSans$1({
         text: this.attrs.text,
         color: this.attrs.color,
         weight: this.attrs.weight,
@@ -5269,7 +5274,7 @@ var LeonSans$1 = /*#__PURE__*/function (_MC$BrowserClip) {
             this.ctx.fillStyle = this.randomColor(no);
             this.ctx.strokeStyle = this.randomColor(no);
             this.ctx.beginPath();
-            this.ctx.arc(pos.x, pos.y, w, 0, PI2$1);
+            this.ctx.arc(pos.x, pos.y, w, 0, PI2);
             this.ctx.stroke();
             no += 1;
           }
@@ -5283,14 +5288,9 @@ var LeonSans$1 = /*#__PURE__*/function (_MC$BrowserClip) {
     value: function randomColor(no) {
       return "hsl(" + (no + cValue) + "," + "70%," + "50%)";
     }
-  }, {
-    key: "html",
-    get: function get() {
-      return " <canvas> </canvas>";
-    }
   }]);
 
-  return LeonSans$1;
+  return LeonSans;
 }(MC__default['default'].BrowserClip);
 
 var compositeAttributes = {
@@ -5552,13 +5552,13 @@ var clipValidationRules = {
 };
 
 var name = "@kissmybutton/motorcortex-leonsans";
-var version = "1.0.11";
+var version = "1.0.12";
 
 var index = {
   npm_name: name,
   version: version,
   Clip: {
-    exportable: LeonSans$1,
+    exportable: LeonSans,
     attributesValidationRules: _objectSpread2({}, clipValidationRules)
   },
   incidents: [{

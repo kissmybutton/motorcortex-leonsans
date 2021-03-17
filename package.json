@@ -101,7 +101,7 @@
     "cz-conventional-changelog": "2.1.0",
     "es6-promise": "4.2.8",
     "eslint": "5.16.0",
-    "rollup": "2.41.3",
+    "rollup": "2.41.4",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",

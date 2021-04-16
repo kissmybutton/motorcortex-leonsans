@@ -22,9 +22,9 @@ export function getPaths(model, data, pathGap, isPattern) {
     line,
     lg,
     direction,
-    arr = [],
-    paths = [],
     paths2 = [];
+  const arr = [],
+    paths = [];
 
   for (i = 0; i < total; i++) {
     line = lines[i];
@@ -156,9 +156,7 @@ function setPointValues(cur, prev, line, num) {
   cur.distance = line.distance;
   cur.num = num;
 
-  if (!prev || cur.rotation != null) {
-    cur.rotation = cur.rotation;
-  } else {
+  if (!(!prev || cur.rotation != null)) {
     const dx = cur.x - prev.x;
     const dy = cur.y - prev.y;
     const rad = Math.atan2(dx, dy);

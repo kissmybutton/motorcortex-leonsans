@@ -2,10 +2,10 @@ export function getLengths(item, model) {
   const total = item.typo.p.length;
   let c,
     p,
-    arr = [],
-    lt = [],
     max = 0,
     i;
+  const arr = [],
+    lt = [];
   for (i = 0; i < total; i++) {
     p = item.typo.p[i];
     c = getEachPath(item, p.v, model);
@@ -28,8 +28,8 @@ function getEachPath(item, points, model) {
     cp1,
     cp2,
     prev,
-    lines = [],
     length = 0;
+  const lines = [];
 
   for (i = 0; i < total; i++) {
     p = points[i];

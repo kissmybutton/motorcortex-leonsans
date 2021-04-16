@@ -4,9 +4,8 @@ export function Grids(ctx, data) {
   ctx.beginPath();
   ctx.lineWidth = 1;
   ctx.strokeStyle = "#aaaaaa";
-  let i,
-    total = data.guide.length,
-    grid;
+  const total = data.guide.length;
+  let i, grid;
   for (i = 0; i < total; i++) {
     grid = data.rect.y + data.grid[i];
     ctx.moveTo(data.rect.x, grid);

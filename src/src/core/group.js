@@ -91,15 +91,13 @@ function breakAll(group, scale, width) {
     g2,
     g3,
     tw = 0,
-    index = 0,
-    tx = 0;
+    index = 0;
   const tg = [];
 
   total = group.length;
   for (i = 0; i < total; i++) {
     g2 = group[i];
     tw = 0;
-    tx = 0;
     tg[index] = [];
     j_total = g2.length;
     for (j = 0; j < j_total; j++) {

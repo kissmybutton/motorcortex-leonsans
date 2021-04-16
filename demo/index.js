@@ -1,7 +1,8 @@
-const MotorCortex = require("@kissmybutton/motorcortex/");
-const Player = require("@kissmybutton/motorcortex-player/");
-const LeonPlugin = require("../src/index");
-const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
+import { loadPlugin, HTMLClip, AudioPlayback } from "@kissmybutton/motorcortex";
+import Player from "@kissmybutton/motorcortex-player";
+import LeonPlugin from "../dist/motorcortex-leonsans.umd";
+
+const LeonSans = loadPlugin(LeonPlugin);
 
 const css = `.container {
   position: relative;
@@ -24,36 +25,32 @@ const css = `.container {
   align-items: center;
   flex-direction: column;
   position: absolute;
- }`;
+}`;
 
-const html = `<div class="container">
-
-
-
-</div>`;
+const html = `<div class="container"></div>`;
 
 const host = document.getElementById("clip");
 
 const containerParams = {
-  width: "90%",
-  height: "90%"
+  width: "800px",
+  height: "600px"
 };
 
-const clip = new MotorCortex.HTMLClip({
+const clip = new HTMLClip({
   css,
   html,
   host,
   containerParams,
   audioSources: [
     {
-      src: "./d2.mp3",
+      src: "https://kissmybutton.github.io/motorcortex-leonsans/demo/d2.mp3",
       id: "my-wav",
       base64: false
     }
   ]
 });
 
-const songPlayback = new MotorCortex.AudioPlayback(
+const songPlayback = new AudioPlayback(
   {},
   {
     selector: "~#my-wav",

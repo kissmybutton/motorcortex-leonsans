@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-leonsans",
-  "version": "1.0.12",
+  "version": "1.0.0",
   "description": "LeonSans plugin for MotorCortex",
   "main": "dist/motorcortex-leonsans.cjs.js",
   "module": "dist/motorcortex-leonsans.esm.js",

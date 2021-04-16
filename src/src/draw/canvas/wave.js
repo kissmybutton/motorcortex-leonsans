@@ -7,12 +7,8 @@ const SIN = Math.sin;
 export function Wave(ctx, data, scale, amplitude, weight, fps) {
   const total = data.wavePaths.length;
   const m_amplitude = getAmplitude(amplitude, scale);
-  let i,
-    p,
-    prev,
-    qx,
-    qy,
-    saveDot = [];
+  let i, p, prev, qx, qy;
+  const saveDot = [];
 
   ctx.beginPath();
   for (i = 0; i < total; i++) {

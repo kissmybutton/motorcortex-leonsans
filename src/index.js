@@ -3,7 +3,7 @@ import LeonIncident from "./LeonIncident";
 import compositeAttributes from "./compoAttributes";
 import { animatedAttrs, clipValidationRules } from "./validation";
 
-import {name,version}  from '../package.json'
+import { name, version } from "../package.json";
 
 export default {
   npm_name: name,
@@ -16,7 +16,7 @@ export default {
     {
       exportable: LeonIncident,
       name: "LeonIncident",
-      attributesValidationRules: { animatedAttrs }
+      attributesValidationRules: { ...animatedAttrs }
     }
   ],
   compositeAttributes

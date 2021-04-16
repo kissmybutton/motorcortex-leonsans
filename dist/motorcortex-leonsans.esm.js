@@ -515,8 +515,8 @@ function addRectToPaths(path, data) {
 }
 function shuffle(oldArray) {
   var newArray = oldArray.slice(),
-      len = newArray.length,
-      i = len,
+      len = newArray.length;
+  var i = len,
       p,
       t;
 
@@ -638,9 +638,8 @@ function Grids(ctx, data) {
   ctx.beginPath();
   ctx.lineWidth = 1;
   ctx.strokeStyle = "#aaaaaa";
-  var i,
-      total = data.guide.length,
-      grid;
+  var total = data.guide.length;
+  var i, grid;
 
   for (i = 0; i < total; i++) {
     grid = data.rect.y + data.grid[i];
@@ -663,12 +662,8 @@ var SIN = Math.sin;
 function Wave(ctx, data, scale, amplitude, weight, fps) {
   var total = data.wavePaths.length;
   var m_amplitude = getAmplitude(amplitude, scale);
-  var i,
-      p,
-      prev,
-      qx,
-      qy,
-      saveDot = [];
+  var i, p, prev, qx, qy;
+  var saveDot = [];
   ctx.beginPath();
 
   for (i = 0; i < total; i++) {
@@ -773,10 +768,10 @@ function getLengths(item, model) {
   var total = item.typo.p.length;
   var c,
       p,
-      arr = [],
-      lt = [],
       max = 0,
       i;
+  var arr = [],
+      lt = [];
 
   for (i = 0; i < total; i++) {
     p = item.typo.p[i];
@@ -801,8 +796,8 @@ function getEachPath(item, points, model) {
       cp1,
       cp2,
       prev,
-      lines = [],
       length = 0;
+  var lines = [];
 
   for (i = 0; i < total; i++) {
     p = points[i];
@@ -1069,10 +1064,8 @@ function PixiColor(no, data, color) {
 
 function getGuide(d, scale) {
   var guide = [],
-      ggap = 10,
-      i,
-      gvx,
-      gvy;
+      ggap = 10;
+  var i, gvx, gvy;
 
   for (i = 0; i < 6; i++) {
     gvx = ggap * i + 20;
@@ -1097,8 +1090,8 @@ function getGuide(d, scale) {
 
 function getGrid(d, scale) {
   var grid = [],
-      i,
       gvy = [98, 340, 815];
+  var i;
 
   for (i = 0; i < 3; i++) {
     grid[i] = gvy[i] * RECT_RATIO * scale;
@@ -1248,9 +1241,9 @@ function getPaths(model, data, pathGap, isPattern) {
       line,
       lg,
       direction,
-      arr = [],
-      paths = [],
       paths2 = [];
+  var arr = [],
+      paths = [];
 
   for (i = 0; i < total; i++) {
     line = lines[i];
@@ -1389,9 +1382,7 @@ function setPointValues(cur, prev, line, num) {
   cur.distance = line.distance;
   cur.num = num;
 
-  if (!prev || cur.rotation != null) {
-    cur.rotation = cur.rotation;
-  } else {
+  if (!(!prev || cur.rotation != null)) {
     var dx = cur.x - prev.x;
     var dy = cur.y - prev.y;
     var rad = Math.atan2(dx, dy);
@@ -1470,9 +1461,8 @@ function setCenter(arr, fw, fh) {
   var total = arr.length;
   var cx = fw / 2;
   var cy = fh / 2;
-  var mp,
-      i,
-      ct = [];
+  var mp, i;
+  var ct = [];
 
   for (i = 0; i < total; i++) {
     mp = arr[i];
@@ -4458,8 +4448,8 @@ var Model = /*#__PURE__*/function () {
           tx = 0,
           ty = 0,
           maxW = 0,
-          maxH = 0,
-          tmp = [];
+          maxH = 0;
+      var tmp = [];
 
       for (i = 0; i < total; i++) {
         gt = textGroup[i];
@@ -5558,9 +5548,7 @@ var index = {
   incidents: [{
     exportable: testIn,
     name: "LeonIncident",
-    attributesValidationRules: {
-      animatedAttrs: animatedAttrs
-    }
+    attributesValidationRules: _objectSpread2({}, animatedAttrs)
   }],
   compositeAttributes: compositeAttributes
 };

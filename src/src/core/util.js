@@ -213,9 +213,9 @@ export function randomBrightColor() {
 }
 
 export function shuffle(oldArray) {
-  let newArray = oldArray.slice(),
-    len = newArray.length,
-    i = len,
+  const newArray = oldArray.slice(),
+    len = newArray.length;
+  let i = len,
     p,
     t;
   while (i--) {

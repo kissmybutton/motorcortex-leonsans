@@ -41,9 +41,8 @@ function setCenter(arr, fw, fh) {
   const total = arr.length;
   const cx = fw / 2;
   const cy = fh / 2;
-  let mp,
-    i,
-    ct = [];
+  let mp, i;
+  const ct = [];
 
   for (i = 0; i < total; i++) {
     mp = arr[i];

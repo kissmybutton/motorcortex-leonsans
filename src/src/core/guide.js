@@ -8,11 +8,9 @@ import { RECT_RATIO } from "./util.js";
  * @description get a guide pos
  */
 export function getGuide(d, scale) {
-  let guide = [],
-    ggap = 10,
-    i,
-    gvx,
-    gvy;
+  const guide = [],
+    ggap = 10;
+  let i, gvx, gvy;
   for (i = 0; i < 6; i++) {
     gvx = ggap * i + 20;
     gvy = ggap * i + 90;
@@ -35,9 +33,9 @@ export function getGuide(d, scale) {
  * @description get a guide pos
  */
 export function getGrid(d, scale) {
-  let grid = [],
-    i,
+  const grid = [],
     gvy = [98, 340, 815];
+  let i;
   for (i = 0; i < 3; i++) {
     grid[i] = gvy[i] * RECT_RATIO * scale;
   }

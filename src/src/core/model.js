@@ -175,8 +175,8 @@ export class Model {
       tx = 0,
       ty = 0,
       maxW = 0,
-      maxH = 0,
-      tmp = [];
+      maxH = 0;
+    const tmp = [];
     for (i = 0; i < total; i++) {
       gt = textGroup[i];
       j_total = gt.length;

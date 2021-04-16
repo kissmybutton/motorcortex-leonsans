@@ -5542,7 +5542,7 @@ var clipValidationRules = {
 };
 
 var name = "@kissmybutton/motorcortex-leonsans";
-var version = "1.0.12";
+var version = "1.0.13";
 
 var index = {
   npm_name: name,

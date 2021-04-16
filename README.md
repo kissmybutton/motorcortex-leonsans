@@ -15,9 +15,9 @@ $ yarn add @kissmybutton/motorcortex-leonsans
 ## Loading
 
 ```javascript
-const MotorCortex = require("@kissmybutton/motorcortex/");
-const LeonPlugin = require("@kissmybutton/motorcortex-leonsans");
-const LeonSans = MotorCortex.loadPlugin(LeonPlugin);
+import {loadPlugin} from "@kissmybutton/motorcortex/";
+import LeonPlugin from "@kissmybutton/motorcortex-leonsans";
+const LeonSans = loadPlugin(LeonPlugin);
 ```
 
 # LeonSans Clip

@@ -5546,7 +5546,7 @@ var clipValidationRules = {
 };
 
 var name = "@kissmybutton/motorcortex-leonsans";
-var version = "1.0.13";
+var version = "1.0.14";
 
 var index = {
   npm_name: name,
@@ -5558,7 +5558,9 @@ var index = {
   incidents: [{
     exportable: testIn,
     name: "LeonIncident",
-    attributesValidationRules: _objectSpread2({}, animatedAttrs)
+    attributesValidationRules: {
+      animatedAttrs: animatedAttrs
+    }
   }],
   compositeAttributes: compositeAttributes
 };

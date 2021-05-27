@@ -16,7 +16,7 @@ export default {
     {
       exportable: LeonIncident,
       name: "LeonIncident",
-      attributesValidationRules: { ...animatedAttrs }
+      attributesValidationRules: { animatedAttrs }
     }
   ],
   compositeAttributes

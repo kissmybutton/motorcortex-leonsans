@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-leonsans",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "LeonSans plugin for MotorCortex",
   "main": "dist/motorcortex-leonsans.cjs.js",
   "module": "dist/motorcortex-leonsans.esm.js",
@@ -76,7 +76,7 @@
     "hammerjs": "^2.0.8"
   },
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "^6.4.1"
+    "@kissmybutton/motorcortex": ">= 6.4.1 < 8"
   },
   "devDependencies": {
     "@babel/cli": "7.14.3",
@@ -84,7 +84,7 @@
     "@babel/preset-env": "7.14.2",
     "@commitlint/cli": "7.6.1",
     "@commitlint/config-conventional": "7.6.0",
-    "@kissmybutton/motorcortex": "6.4.1",
+    "@kissmybutton/motorcortex": "^7.0.0",
     "@kissmybutton/motorcortex-anime": "2.1.14",
     "@kissmybutton/motorcortex-player": "1.9.4",
     "@rollup/plugin-json": "4.1.0",

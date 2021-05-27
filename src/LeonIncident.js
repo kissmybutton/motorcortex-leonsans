@@ -12,7 +12,7 @@ class testIn extends MC.Effect {
       for (let i = 0; i < LeonAttrs.length; i++) {
         obj[LeonAttrs[i]] = currentLeonAttrs[LeonAttrs[i]];
       }
-
+      
       return obj;
     }
   }
